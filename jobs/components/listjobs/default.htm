@@ -1,0 +1,43 @@
+<div class="container-fluid" id="jobDetails" style="display:none">
+
+			{% partial __SELF__ ~ '::jobdetails'  %}
+</div>
+<div id="jobListTable">
+<table class="table table-striped" >
+	<thead>
+		<tr>
+		<th>Job Title</th>
+		<th>Job Type</th>
+		<th>Date Posted</th>
+		<th>Expire Date</th>
+		<th>Status</th>
+		<th>Operation</th>	
+	 </tr>
+	</thead>
+<tbody>
+	{% if records %}
+	{% for record in records %}
+	<tr>
+		<td>{{record.title}}</td>
+		<td>{{record.jobtypes.job_type}}</td>
+		<td>{{record.created_at|date("M j, Y \\a\\t g:ia")}}</td>
+		<td>{{record.expired_at|date("M j, Y \\a\\t g:ia")}}</td>
+		{% if record.status==1 %}
+		<td colspan="2"><span class="badge badge-danger">Expired</span></td>
+		{% else %}
+		<td><span class="badge badge-success">Open</span></td>
+		<td><a data-request="onApply" data-request-data="id:'{{record.id}}'" data-request-success=" $('#jobListTable').css('display','none'),$('#jobDetails').css('display','block')"  class="btn btn-primary btn-sm" style="color:#fff;">Apply</a></td>
+		{% endif %}
+	</tr>
+	{% endfor %}
+	{% else %}
+	<tr>
+		<td colspan="2">No Jobs Found</td>
+	</tr>
+	{% endif %}
+
+</tbody>
+</table>
+</div>
+
+

@@ -1,0 +1,10 @@
+name: Departments
+form: $/amjadkhan/jobs/models/department/fields.yaml
+modelClass: AmjadKhan\Jobs\Models\Department
+defaultRedirect: AmjadKhan/jobs/departments
+create:
+    redirect: 'AmjadKhan/jobs/departments/update/:id'
+    redirectClose: AmjadKhan/jobs/departments
+update:
+    redirect: AmjadKhan/jobs/departments
+    redirectClose: AmjadKhan/jobs/departments

@@ -1,0 +1,4 @@
+title: applications
+modelClass: AmjadKhan\Jobs\Models\Application
+toolbar:
+    buttons: reorder_toolbar

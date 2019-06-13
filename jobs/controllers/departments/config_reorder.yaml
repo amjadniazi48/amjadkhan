@@ -1,0 +1,4 @@
+title: Departments
+modelClass: AmjadKhan\Jobs\Models\Department
+toolbar:
+    buttons: reorder_toolbar

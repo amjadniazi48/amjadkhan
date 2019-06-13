@@ -1,0 +1,69 @@
+<?php Block::put('breadcrumb') ?>
+<ul>
+<li><a href="<?= Backend::url('AmjadKhan/jobs/applications') ?>">applications</a></li>
+<li><?= e($this->pageTitle) ?></li>
+</ul>
+<?php Block::endPut() ?>
+<?php if (!$this->fatalError): ?>
+<div class="form-preview">
+ <?php   
+  $applicationdata = AmjadKhan\Jobs\Models\Application::find($recordId);
+ ?>
+ <table class="table table-striped ">
+     <tr>
+        <td><b>First Name</b></td> 
+        <td><?= $applicationdata->first_name;?></td>
+    </tr>
+    <tr>
+      <td><b>Last Name</b></td> 
+      <td><?= $applicationdata->last_name;?></td>
+  </tr>
+  <tr>
+      <td><b>Email</b></td> 
+      <td><?= $applicationdata->email;?></td>
+  </tr>  
+  <tr>
+      <td><b>Age</b></td> 
+      <td><?= $applicationdata->age;?></td>
+  </tr>
+  <tr>
+      <td><b>City</b></td> 
+      <td><?= $applicationdata->city;?></td>
+  </tr>
+  <tr>
+    <tr>
+      <td><b>Current Salary</b></td> 
+      <td><?= $applicationdata->current_salary;?></td>
+  </tr>
+  <tr>
+      <td><b>Expected Salary</b></td> 
+      <td><?= $applicationdata->expected_salary;?></td>
+  </tr>
+  <tr>
+      <td><b>Join Date</b></td> 
+      <td><?= $applicationdata->start_date;?></td>
+  </tr>
+    <tr>
+      <td><b>Cover Letter</b></td> 
+      <td><?= $applicationdata->cover_letter;?></td>
+  </tr>
+   <tr>
+      <td><b>Description</b></td> 
+      <td><?= $applicationdata->description;?></td>
+  </tr>
+  <?php if ($applicationdata->cvfile){ ?>
+<tr>
+    <td><b>CV </b>( <?=$applicationdata->cvfile->file_name;?>)</td> 
+      <td><a href="<?= $applicationdata->cvfile->getPath(); ?>" target="_blank" class="btn btn-primary">Download</a></td>
+</tr>
+<?php } ?>
+</table>
+</div>
+<?php else: ?>
+<p class="flash-message static error"><?= e($this->fatalError) ?></p>
+<?php endif ?>
+<p>
+    <a href="<?= Backend::url('AmjadKhan/jobs/applications') ?>" class="btn btn-default oc-icon-chevron-left">
+    <?= e(trans('backend::lang.form.return_to_list')) ?>
+    </a>
+</p>

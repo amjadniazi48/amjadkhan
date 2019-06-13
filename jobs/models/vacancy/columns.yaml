@@ -1,0 +1,28 @@
+columns:
+    title:
+        label: Title
+        type: text
+        clickable: false
+    expired_at:
+        label: Expires_at
+        type: datetime
+        clickable: false
+    department_name:
+        label : Department
+        relation: department
+        select: department_name
+    preview_button:
+        label: Preview
+        type: partial
+        width: 5px
+        align: right
+        cssClass: 'nolink'  
+        path: $/amjadkhan/jobs/controllers/vacancies/_list_preview.htm
+    edit_button:
+        label: Update
+        type: partial
+        width: 5px
+        align: left
+        cssClass: nolink  
+        path: $/amjadkhan/jobs/controllers/vacancies/_list_update.htm
+        

@@ -1,0 +1,28 @@
+plugin:
+    name: 'AmjadKhan.jobs::lang.plugin.name'
+    description: 'Jobs management tool for any website'
+    author: AmjadKhan
+    icon: oc-icon-suitcase
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Jobs
+        url: AmjadKhan/jobs/vacancies
+        icon: icon-suitcase
+        sideMenu:
+            side-menu-item3:
+                label: Departments
+                url: AmjadKhan/jobs/departments
+                icon: icon-list-ul
+            side-menu-item:
+                label: Vacancies
+                url: AmjadKhan/jobs/vacancies
+                icon: icon-suitcase
+            side-menu-item2:
+                label: Applications
+                url: AmjadKhan/jobs/applications
+                icon: icon-envelope
+            side-menu-item4:
+                label: 'Job Types'
+                url: AmjadKhan/jobs/jobtypes
+                icon: icon-cubes

@@ -1,0 +1,49 @@
+columns:
+    first_name:
+        label: 'First Name'
+        type: text
+        clickable: false
+    last_name:
+        label: 'Last Name'
+        type: text
+        clickable: false
+    email:
+        label: Email
+        type: text
+        clickable: false
+    age:
+        label: Age
+        type: text
+        clickable: false
+    city:
+        label: City
+        type: text
+        clickable: false
+    start_date:
+        label: 'Join Date'
+        type: date
+        clickable: false
+    expected_salary:
+        label: 'Expected Salary'
+        type: text
+        clickable: false
+    current_salary:
+        label: 'Current Salary'
+        type:  text
+        clickable: false
+    preview_button:
+        label: Preview
+        type: partial
+        width: 5px
+        align: right
+        cssClass: 'nolink' 
+        clickable: false 
+        path: $/amjadkhan/jobs/controllers/applications/_list_preview.htm
+    # edit_button:
+    #     label: Update
+    #     type: partial
+    #     width: 5px
+    #     align: left
+    #     clickable: false
+    #     cssClass: nolink  
+    #     path: $/AmjadKhan/jobs/controllers/applications/_list_update.htm

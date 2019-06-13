@@ -1,0 +1,10 @@
+name: Jobtypes
+form: $/amjadkhan/jobs/models/jobtype/fields.yaml
+modelClass: AmjadKhan\Jobs\Models\Jobtype
+defaultRedirect: AmjadKhan/jobs/jobtypes
+create:
+    redirect: 'AmjadKhan/jobs/jobtypes/update/:id'
+    redirectClose: AmjadKhan/jobs/jobtypes
+update:
+    redirect: AmjadKhan/jobs/jobtypes
+    redirectClose: AmjadKhan/jobs/jobtypes

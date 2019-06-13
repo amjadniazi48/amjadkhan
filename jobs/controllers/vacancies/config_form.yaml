@@ -1,0 +1,12 @@
+name: vacancies
+modelClass: AmjadKhan\Jobs\Models\Vacancy
+form: $/amjadkhan/jobs/models/vacancy/fields.yaml
+defaultRedirect: AmjadKhan/jobs/vacancies
+create:
+    redirect: 'AmjadKhan/jobs/vacancies/update/:id'
+    redirectClose: AmjadKhan/jobs/vacancies
+update:
+    redirect: AmjadKhan/jobs/vacancies
+    redirectClose: AmjadKhan/jobs/vacancies
+preview:
+    title: preview

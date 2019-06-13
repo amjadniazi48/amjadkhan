@@ -1,0 +1,103 @@
+		<div class="row">
+			<div class="col-md-12" style="background-color:lightgrey;padding:15px;border-radius: 5px;">
+          <div>Application Details<a data-request="{{__SELF__}}::onRun"  data-request-success=" $('#jobListTable').css('display','block'),$('#jobDetails').css('display','none')" class="float-right" style="cursor:pointer;">&times;</a></div>
+           </div>
+			<div class="col-md-6"  style="padding: 10px;" >
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<ul class="list-group">
+							<li class="list-group-item active"><b>Title: </b>&nbsp;<span>{{record.title}}</span></li>
+							<li class="list-group-item"><b>Expired Date: </b>&nbsp;<span>{{record.expired_date|date("M j, Y \\a\\t g:ia")}}</span>
+								<li class="list-group-item"><b>Location:</b>&nbsp;<span class="badge badge-warning">{{record.location}}</span>
+								</li>
+								<li class="list-group-item"><b>Job Type:</b>&nbsp;<span class="badge badge-success">{{record.jobtypes.job_type}}</span>
+								</li>
+								<li class="list-group-item"><b>Requirments:</b>
+									<ul>
+										{% for myrecord in record.requirments %}
+										<li>{{myrecord.requirments}}</li>
+										{% endfor %}
+									</ul>
+								</li>
+								<li class="list-group-item"><b>Expectations:</b>
+									<ul>
+										{% for myrecord in record.expectations %}
+										<li>{{myrecord.expectations}}</li>
+										{% endfor %}
+									</ul>
+								</li>
+								<li class="list-group-item"><b>Description: </b>&nbsp;<span>{{record.description|raw}}</span></li>
+								<li class="list-group-item"><b>Posted at: </b>&nbsp;<span>{{record.created_at_at|date("M j, Y \\a\\t g:ia")}}</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 float-right"  style="padding:10px;">
+					<div class="card bg-light">
+                      <div class="card-header  text-white bg-primary mb-3">Apply Now</div>
+                         <div class="card-body">
+					<form data-request="onSubmit" data-request-files data-request-flash>
+						<input type="hidden" name="_handler" value="onSave">
+						{{form_token()}}
+						{{form_sessionKey()}}
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="Firstname">First Name<span style="color:red">*</span></label>
+								<input type="text" class="form-control"  placeholder="First Name" name="first_name">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="Lastname">Last Name<span style="color:red">*</span></label>
+								<input type="text" class="form-control" id="last_name" placeholder="Last Name" name="last_name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="Email">Email<span style="color:red">*</span></label>
+							<input type="email" class="form-control" placeholder="Email" name="email">
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="Age">Age<span style="color:red">*</span></label>
+								<input type="text" name="age" class="form-control"  placeholder="Age">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputCity">City<span style="color:red">*</span></label>
+								<input type="text" class="form-control"  name="city" placeholder="City">
+							</div>
+						   </div>		
+							<div class="form-group ">
+								<label for="coverLetter">Joining Date<span style="color:red">*</span></label>
+								<input class="form-control" type="text"  name="start_date">  
+								<input class="form-control" type="hidden"  name="vacancy_id" value="{{record.id}}">
+							</div>				
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="inputZip">Expected Salary<span style="color:red">*</span></label>
+								<input type="text" class="form-control" name="expected_salary">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputZip">Current Salary (if any)</label>
+								<input type="text" class="form-control" name="current_salary">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="coverLetter">Cover Letter<span style="color:red">*</span></label>
+							<textarea class="form-control" rows="3" name="cover_letter"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="Description">Experience(Optional)</label>
+							<textarea class="form-control"  rows="3" name="experience"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="UploadCV">Upload Your CV</label>
+							<input type="file" class="form-control-file" name="cvfile">
+						</div>
+						<button type="submit" class="btn btn-primary btn-block">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+
+
+

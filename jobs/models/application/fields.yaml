@@ -1,0 +1,15 @@
+fields:
+    first_name:
+        label: 'First Name'
+        span: auto
+        type: text
+    cvfile:
+        label: 'File upload'
+        span: auto
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        fileTypes: 'doc,pdf'
+        type: fileupload

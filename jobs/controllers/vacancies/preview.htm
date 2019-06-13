@@ -1,0 +1,94 @@
+<?php Block::put('breadcrumb') ?>
+<ul>
+<li><a href="<?= Backend::url('AmjadKhan/jobs/vacancies') ?>">vacancies</a></li>
+<li><?= e($this->pageTitle) ?></li>
+</ul>
+<?php Block::endPut() ?>
+<?php if (!$this->fatalError): ?>
+<div class="form-preview">
+  <?php   
+  $vacancydata = AmjadKhan\Jobs\Models\Vacancy::find($recordId);
+  function dateformat($date)
+  {
+    $date=date_create($date);
+    return date_format($date,"M d, Y H:i:s");
+  }
+  ?>
+  <table class="table table-striped">
+   <tr>
+    <td><b>Title</b></td> 
+    <td><?= $vacancydata->title;?></td>
+  </tr>
+  <tr>
+    <td><b>Expries_at</b></td> 
+    <td><?= dateformat($vacancydata->expired_at);?></td>
+  </tr>
+   <tr>
+    <td><b>Department</b></td> 
+    <td><?= $vacancydata->department->department_name;?></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Requirments</b></td>
+  </tr>
+  <?php foreach($vacancydata->requirments as $requirments) { ?>
+  <tr>
+    <td colspan="2">
+      <ul>
+        <li><?php  echo $requirments['requirments']; ?></li>
+      </ul>
+    </td>
+  </tr>  
+  <?php 
+} 
+?> 
+<tr>
+  <td colspan="2"><b>Expectations</b></td>
+</tr>
+<?php foreach($vacancydata->expectations as $expectations) { ?>
+<tr>
+  <td colspan="2">
+    <ul>
+      <li><?php  echo $expectations['expectations']; ?></li>
+    </ul>
+  </td>
+</tr>  
+<?php 
+} 
+?> 
+<tr>
+  <td colspan="2"><b>Email to</b></td>
+</tr>
+<?php foreach($vacancydata->emailto as $email) { ?>
+<tr>
+  <td colspan="2">
+    <ul>
+      <li><?php echo $email['emailto']; ?></li>
+    </ul>
+  </td>
+</tr>  
+<?php 
+} 
+?> 
+<tr>
+  <td><b>Description</b></td> 
+  <td><?= $vacancydata->description;?></td>
+</tr>
+<tr>
+  <td><b>Created</b></td> 
+  <td><?= dateformat($vacancydata->created_at);?></td>
+</tr>
+<tr>
+  <td><b>Updated</b></td> 
+  <td><?= dateformat($vacancydata->updated_at);?></td>
+</tr>
+</table>     
+</div>
+<?php else: ?>
+<p class="flash-message static error"><?= e($this->fatalError) ?></p>
+<?php endif ?>
+
+<p>
+  <a href="<?= Backend::url('AmjadKhan/jobs/vacancies') ?>" class="btn btn-default oc-icon-chevron-left">
+  <?= e(trans('backend::lang.form.return_to_list')) ?>
+  </a>
+  </p>

@@ -1,0 +1,67 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        type: text
+    expired_at:
+        label: Expires_at
+        mode: datetime
+        span: auto
+        type: datepicker
+    location:
+        label: Location
+        span: auto
+        type: text
+    jobtypes:
+        label: 'Job Type'
+        nameFrom: job_type
+        descriptionFrom: description
+        span: auto
+        emptyOption: 'Select Job Type'
+        type: relation
+    description:
+        label: Description
+        size: large
+        span: full
+        type: richeditor
+    department:
+        label: Department
+        nameFrom: department_name
+        descriptionFrom: description
+        emptyOption: 'Select Department'
+        span: full
+        required: 1
+        type: relation
+    emailto:
+        label: 'Email (Concerned Persons who received applicant emails like HR, Admin)'
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                emailto:
+                    label: Email
+                    span: full
+                    type: text
+    requirments:
+        label: Requirments
+        prompt: 'Add new item'
+        span: full
+        type: repeater
+        form:
+            fields:
+                requirments:
+                    label: Requirment
+                    span: full
+                    type: text
+    expectations:
+        label: Expectations
+        span: full
+        prompt: 'Add new item'
+        type: repeater
+        form:
+            fields:
+                expectations:
+                    label: Expectation
+                    span: full
+                    type: text

@@ -1,0 +1,11 @@
+name: applications
+form: $/amjadkhan/jobs/models/application/fields.yaml
+modelClass: AmjadKhan\Jobs\Models\Application
+defaultRedirect: AmjadKhan/jobs/applications
+create:
+    redirect: 'AmjadKhan/jobs/applications/update/:id'
+    redirectClose: AmjadKhan/jobs/applications
+update:
+    redirect: AmjadKhan/jobs/applications
+    redirectClose: AmjadKhan/jobs/applications
+

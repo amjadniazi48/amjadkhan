@@ -1,0 +1,8 @@
+columns:
+    department_name:
+        label: Department
+        type: text
+    vacancies_count:
+        label: Vacancies
+        relation: vacancies
+        useRelationCount: true

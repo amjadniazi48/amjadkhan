@@ -1,0 +1,12 @@
+list: $/amjadkhan/jobs/models/jobtype/columns.yaml
+modelClass: AmjadKhan\Jobs\Models\Jobtype
+title: Jobtypes
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'AmjadKhan/jobs/jobtypes/update/:id'

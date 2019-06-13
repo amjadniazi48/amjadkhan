@@ -1,0 +1,4 @@
+columns:
+    job_type:
+        label: 'Job Type'
+        type: text

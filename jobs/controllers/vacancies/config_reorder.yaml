@@ -1,0 +1,4 @@
+title: vacancies
+modelClass: AmjadKhan\Jobs\Models\Vacancy
+toolbar:
+    buttons: reorder_toolbar

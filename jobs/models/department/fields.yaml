@@ -1,0 +1,5 @@
+fields:
+    department_name:
+        label: Department
+        span: auto
+        type: text

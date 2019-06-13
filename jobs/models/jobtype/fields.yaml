@@ -1,0 +1,5 @@
+fields:
+    job_type:
+        label: 'Job Type'
+        span: auto
+        type: text
